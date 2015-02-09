@@ -14,7 +14,8 @@ var ghost = require('ghost');
 var config = path.join(__dirname, './config.js');
 
 ghost({config: config}).then(function (ghostServer) {
-  ghostServer.start();
+  app.use(ghostServer.config.paths.subdir, ghostServer.rootApp);
+  ghostServer.start(app);
 });
 
 // view engine setup

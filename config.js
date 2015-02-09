@@ -10,7 +10,7 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://my-ghost-blog.com/blog',
         mail: {},
         database: {
             client: 'sqlite3',
@@ -32,7 +32,7 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         // Change this to your Ghost blogs published URL.
-        url: 'http://localhost:8080',
+        url: 'http://localhost:8080/blog',
 
         // Example mail config
         // Visit http://support.ghost.org/mail for instructions
@@ -63,7 +63,8 @@ config = {
             port: '8080'
         },
         paths: {
-            contentPath: path.join(__dirname, '/content/')
+            contentPath: path.join(__dirname, '/content/'),
+            subDir: 'blog/'
         }
     },
 
